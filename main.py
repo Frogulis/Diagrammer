@@ -8,4 +8,4 @@ screen.fill((255, 0, 0))
 
 pygame.draw.circle(screen, (0,0,255), (150, 100), 100)
 
-pygame.image.save(screen, "C:\\Dev\\Diagrammer\\output\\test.png")
+pygame.image.save(screen, ".\\output\\test.png")
