@@ -23,7 +23,7 @@ class Diagram:
     def loadFonts(self):
         pygame.font.init()
         fname = pygame.font.get_default_font()
-        self.font = pygame.font.Font(fname, 12)
+        self.font = pygame.font.Font(fname, 14)
     
     def getTextSurface(self, text):
         if not pygame.font.get_init():
@@ -35,10 +35,10 @@ class Diagram:
             self.drawBlock(surface, block)
     
     def drawBlock(self, surface, block):
-        rect = pygame.Rect(block["x"], block["y"], 100, 50)
+        textSurface = self.getTextSurface(block["text"])
+        rect = pygame.Rect(block["x"], block["y"], max(100, textSurface.get_width() + 10), max(50, textSurface.get_height() + 5))
         pygame.draw.rect(surface, (255,255,255), rect)
         pygame.draw.rect(surface, (0,0,0), rect, 1)
-        textSurface = self.getTextSurface(block["text"])
         surface.blit(textSurface, (rect.centerx - textSurface.get_width() / 2, rect.centery - textSurface.get_height() / 2))
 
 d = Diagram()
