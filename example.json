@@ -1,0 +1,40 @@
+{
+    "legend": {
+        "title": "Example graph"
+    },
+    "blocks": [
+        {
+            "id": "no1",
+            "x": 100,
+            "y": 100,
+            "text": "No 1"
+        },
+        {
+            "id": "no2",
+            "x": 300,
+            "y": 100,
+            "text": "No 2"
+        }
+    ],
+    "visibilities": [
+        {
+            "id": "default",
+            "mode": "blacklist",
+            "list": []
+        },
+        {
+            "id": "without2",
+            "mode": "blacklist",
+            "list": ["no2"]
+        }
+    ],
+    "sequences": [
+        {
+            "id": "1-2",
+            "list": [
+                ["no1"],
+                ["no2"]
+            ]
+        }
+    ]
+}
